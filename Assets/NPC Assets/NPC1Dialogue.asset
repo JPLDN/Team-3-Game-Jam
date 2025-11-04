@@ -15,8 +15,8 @@ MonoBehaviour:
   npcName: NPC 1
   npcPortrait: {fileID: 7482667652216324306, guid: 6588625e979af9f4e843ca7a75a72831, type: 3}
   dialogueLines:
-  - Gui, what's your login password?
-  - You can't check your notes or ask for help
+  - Dialogue n Dat
+  - Dialogue styll
   autoProgressLines: 0100
   autoProgressDelay: 1.5
   typingSpeed: 0.05
