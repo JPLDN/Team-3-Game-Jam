@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ArcadeMachine1 : MonoBehaviour
+public class ArcadeMachine1 : MonoBehaviour, IInteractable
 {
     [SerializeField] private int miniGameID = 1;
     [SerializeField] private string MiniGame1;
