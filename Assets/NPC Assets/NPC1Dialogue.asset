@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce1bd0e30441fa940ab192e0e7b5cbba, type: 3}
   m_Name: NPC1Dialogue
   m_EditorClassIdentifier: 
-  npcName: 
-  npcPortrait: {fileID: 0}
-  dialogueLines: []
+  npcName: NPC 1
+  npcPortrait: {fileID: 7482667652216324306, guid: 6588625e979af9f4e843ca7a75a72831, type: 3}
+  dialogueLines:
+  - Hello There
+  - How are you?
+  autoProgressLines: 0100
+  autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
   voiceVolume: 1
-  autoProgressLines: 
-  autoProgressDelay: 1.5

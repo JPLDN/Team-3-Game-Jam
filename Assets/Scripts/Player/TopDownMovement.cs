@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TopDownMovement : MonoBehaviour
 {
@@ -10,18 +11,16 @@ public class TopDownMovement : MonoBehaviour
     void Start()
     {
         rb.GetComponent<Rigidbody2D>();
-        rb.freezeRotation = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        rb.linearVelocity = movement * moveSpeed;
     }
 
-    private void FixedUpdate()
+    public void Move(InputAction.CallbackContext context)
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        movement = context.ReadValue<Vector2>();
     }
 }
