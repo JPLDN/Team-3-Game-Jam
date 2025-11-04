@@ -1650,7 +1650,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1868114994996185274, guid: 6ed308700f67fc04996b091cab6f8c08, type: 3}
       propertyPath: m_Name
-      value: Arcade Machine (1)
+      value: Arcade Machine 2
       objectReference: {fileID: 0}
     - target: {fileID: 7991984098414896299, guid: 6ed308700f67fc04996b091cab6f8c08, type: 3}
       propertyPath: m_LocalPosition.x
