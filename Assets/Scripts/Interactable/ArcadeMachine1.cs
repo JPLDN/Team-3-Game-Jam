@@ -8,7 +8,7 @@ public class ArcadeMachine1 : MonoBehaviour, IInteractable
 
     public bool CanInteract()
     {
-        return true;
+        return GameProgress.Instance.CanPlayMiniGame(miniGameID);
     }
 
     public void Interact()
