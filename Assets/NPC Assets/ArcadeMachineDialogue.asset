@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: ArcadeMachineDialogue
   m_EditorClassIdentifier: 
   npcName: ArcadeMachine
-  npcPortrait: {fileID: 0}
-  dialogueLines: []
-  autoProgressLines: 
+  npcPortrait: {fileID: 7482667652216324306, guid: 01a32ca93a4f1cd468db32b3892cd4be, type: 3}
+  dialogueLines:
+  - This mini-game is currently locked.
+  - Please complete the previous mini-game to unlock this mini-game.
+  autoProgressLines: 0100
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
