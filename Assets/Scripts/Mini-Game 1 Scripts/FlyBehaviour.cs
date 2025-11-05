@@ -6,12 +6,17 @@ public class FlyBehaviour : MonoBehaviour
     [SerializeField] public float velocity = 1.5f;
     [SerializeField] public float rotationSpeed = 5f;
 
+    [SerializeField] private GameObject restartButton;
+
     private Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if(restartButton != null)
+            restartButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,5 +33,18 @@ public class FlyBehaviour : MonoBehaviour
     void FixedUpdate()
     {
         transform.rotation = Quaternion.Euler(0, 0, rb.linearVelocity.y * rotationSpeed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Time.timeScale = 0;
+        if (restartButton != null)
+            restartButton.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 }
