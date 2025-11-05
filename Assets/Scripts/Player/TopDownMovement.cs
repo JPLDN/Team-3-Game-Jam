@@ -14,6 +14,7 @@ public class TopDownMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        rb.freezeRotation = true;
     }
 
     // Update is called once per frame
