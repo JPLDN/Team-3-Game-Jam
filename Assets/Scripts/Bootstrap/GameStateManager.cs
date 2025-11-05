@@ -1,5 +1,8 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public enum GameFlags
@@ -38,8 +41,6 @@ public sealed class GameStateManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log("Error");
-
         if (Instance == this)
         {
             Instance = null;
@@ -47,21 +48,45 @@ public sealed class GameStateManager : MonoBehaviour
     }
 
     public bool HasFlag(GameFlags flag) => gameFlags.Contains(flag);
+
     public bool SetFlag(GameFlags flag, bool value = true)
     {
-        bool changed = value ? gameFlags.Contains(flag) : false;
-        return changed;
+        if (value)
+        {
+            return gameFlags.Add(flag);
+        }
+        else
+        {
+            return gameFlags.Remove(flag);
+        }
     }
 
     public bool ToggleFlag(GameFlags flag)
     {
-        bool newValue = !gameFlags.Contains(flag);
-        SetFlag(flag, newValue);
-        return newValue;
+        if (gameFlags.Contains(flag))
+        {
+            gameFlags.Remove(flag);
+            return false;
+        }
+        else
+        {
+            gameFlags.Add(flag);
+            return true;
+        }
     }
 
     public bool CanPlayMinigame(Minigames minigame)
     {
+        var allFlags = Enum.GetValues(typeof(GameFlags))
+                           .Cast<GameFlags>()
+                           .ToList();
+
+        string joinedFlags = string.Join(", ", allFlags.Select(f => f.ToString()));
+        Debug.Log($"All GameFlags: {joinedFlags}");
+
+        string activeFlags = string.Join(", ", gameFlags);
+        Debug.Log($"Active GameFlags: {activeFlags}");
+
         switch (minigame)
         {
             case Minigames.Minigame2 when HasFlag(GameFlags.IsMinigame1Complete):
@@ -69,6 +94,7 @@ public sealed class GameStateManager : MonoBehaviour
             case Minigames.Minigame1:
                 return true;
         }
+
         return false;
     }
 }

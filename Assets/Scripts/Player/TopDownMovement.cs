@@ -13,7 +13,7 @@ public class TopDownMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         rb.freezeRotation = true;
     }
 
@@ -25,7 +25,7 @@ public class TopDownMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        anim.SetBool("isWalking", true);   
+        anim.SetBool("isWalking", true);
 
         if (context.canceled)
         {

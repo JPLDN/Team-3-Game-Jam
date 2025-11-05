@@ -3,9 +3,11 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
+
     public static Score instance;
 
     [SerializeField] public TextMeshProUGUI scoreText;
+    [SerializeField] private int WinScore = 15;
 
     private int score;
 
@@ -27,5 +29,12 @@ public class Score : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
+        if (score >= WinScore)
+        {
+            var instance = GameStateManager.Instance;
+            instance.SetFlag(GameFlags.IsMinigame1Complete, true);
+
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+        }
     }
 }
