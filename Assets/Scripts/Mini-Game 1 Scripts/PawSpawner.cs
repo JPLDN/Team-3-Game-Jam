@@ -34,6 +34,6 @@ public class PawSpawner : MonoBehaviour
         Vector3 spawnPos = transform.position + new Vector3(0, Random.Range(-heightRange, heightRange));
         GameObject paw = Instantiate(pawPrefab, spawnPos, Quaternion.identity);
 
-        Destroy(pawPrefab, 10f);
+        Destroy(paw, 10f);
     }
 }
