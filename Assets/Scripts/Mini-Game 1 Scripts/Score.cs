@@ -31,10 +31,7 @@ public class Score : MonoBehaviour
         scoreText.text = score.ToString();
         if (score >= WinScore)
         {
-            var instance = GameStateManager.Instance;
-            instance.SetFlag(GameFlags.IsMinigame1Complete, true);
-
-            UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("WinScene");
         }
     }
 }
