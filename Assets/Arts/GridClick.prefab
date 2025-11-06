@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5146090115945382726}
   - component: {fileID: 6448069541294203609}
   - component: {fileID: 869101883328709050}
+  - component: {fileID: -3310046124402858944}
   m_Layer: 5
   m_Name: GridClick
   m_TagString: Untagged
@@ -121,6 +122,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-3310046124402858944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5104752314652343940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5473c53260e2e41a84abc1e55d8ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 869101883328709050}
+  buttonText: {fileID: 0}
+  playerSide: 
 --- !u!1 &6738093742635083852
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
