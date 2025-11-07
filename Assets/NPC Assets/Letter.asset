@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Letter
   m_EditorClassIdentifier: 
   npcName: Letter
-  npcPortrait: {fileID: 7482667652216324306, guid: 0378b3ea4290c7147a7750f00b0fb73f, type: 3}
+  npcPortrait: {fileID: -3010936111377052107, guid: 1c79d1440c4bb1049be14019cbf73c35, type: 3}
   dialogueLines:
   - "Ola, Hoje estou me a sentir muito sozinha\u2026 "
   - Nao sei se alguem encatrara esta carta.
