@@ -23,27 +23,29 @@ public class TopDownMovement : MonoBehaviour
     void Update()
     {
         rb.linearVelocity = movement * moveSpeed;
-        StopFootSteps();
+        //StopFootSteps();
 
         if (!playingFootsteps)
         {
-            StartFootSteps();
+            //StartFootSteps();
         }
-        else if ()
+        else if (playingFootsteps && movement == Vector2.zero)
         {
-            StopFootSteps();
+            //StopFootSteps();
         }
     }
 
     public void Move(InputAction.CallbackContext context)
     {
         anim.SetBool("isWalking", true);
+        StartFootSteps();
 
         if (context.canceled)
         {
             anim.SetBool("isWalking", false);
             anim.SetFloat("LastInputX", movement.x);
             anim.SetFloat("LastInputY", movement.y);
+            StopFootSteps();
         }
 
         movement = context.ReadValue<Vector2>();

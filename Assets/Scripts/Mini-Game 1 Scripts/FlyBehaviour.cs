@@ -9,6 +9,9 @@ public class FlyBehaviour : MonoBehaviour
     [SerializeField] private GameObject restartButton;
 
     private Rigidbody2D rb;
+    private AudioSource audioSource;
+    public AudioSource bgSound;
+    public AudioClip failSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +20,7 @@ public class FlyBehaviour : MonoBehaviour
 
         if(restartButton != null)
             restartButton.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,8 @@ public class FlyBehaviour : MonoBehaviour
             rb.linearVelocity = Vector2.up * velocity;
 
             rb.AddForce(Vector2.up * velocity, ForceMode2D.Impulse);
+
+            audioSource.Play();
         }
     }
 
@@ -40,6 +46,9 @@ public class FlyBehaviour : MonoBehaviour
         Time.timeScale = 0;
         if (restartButton != null)
             restartButton.SetActive(true);
+        audioSource.clip = failSound; 
+        audioSource.Play();
+        bgSound.Stop();
     }
 
     public void RestartGame()
