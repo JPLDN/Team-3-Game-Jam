@@ -8,6 +8,8 @@ public class TopDownMovement : MonoBehaviour
     private Vector2 movement;
 
     private Animator anim;
+    private bool playingFootsteps = false;
+    public float footstepSpeed = 0.5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +23,16 @@ public class TopDownMovement : MonoBehaviour
     void Update()
     {
         rb.linearVelocity = movement * moveSpeed;
+        StopFootSteps();
+
+        if (!playingFootsteps)
+        {
+            StartFootSteps();
+        }
+        else if ()
+        {
+            StopFootSteps();
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -37,5 +49,22 @@ public class TopDownMovement : MonoBehaviour
         movement = context.ReadValue<Vector2>();
         anim.SetFloat("InputX", movement.x);
         anim.SetFloat("InputY", movement.y);
+    }
+
+    void StartFootSteps()
+    {
+        playingFootsteps = true;
+        InvokeRepeating(nameof(PlayFootstep), 0f, footstepSpeed);
+    }
+
+    void StopFootSteps()
+    {
+        playingFootsteps = false;
+        CancelInvoke(nameof(PlayFootstep));
+    }
+
+    void PlayFootstep()
+    {
+        SoundEffectManager.Play("Footstep");
     }
 }
