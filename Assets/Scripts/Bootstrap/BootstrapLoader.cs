@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public sealed class BootstrapLoader : MonoBehaviour
 {
-    [SerializeField] private string firstGameplayScene = "MainScene";
+    [SerializeField] private string firstGameplayScene = "MainMenu";
     [SerializeField] private Camera bootstrapCamera;
 
     private void Start()

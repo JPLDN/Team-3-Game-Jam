@@ -325,6 +325,10 @@ PrefabInstance:
       propertyPath: bootstrapCamera
       value: 
       objectReference: {fileID: 793447267}
+    - target: {fileID: -6153447952222303836, guid: 170a48347879a514ca782779f5134efe, type: 3}
+      propertyPath: firstGameplayScene
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 5820466768649933709, guid: 170a48347879a514ca782779f5134efe, type: 3}
       propertyPath: m_Name
       value: BoostrapLoader
