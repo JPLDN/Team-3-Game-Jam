@@ -8088,8 +8088,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   miniGameID: 0
   miniGameScene: MiniGame1
-  lockedPopupPanel: {fileID: 0}
-  lockedPopupText: {fileID: 0}
+  lockedPopupPanel: {fileID: 1955919130}
+  lockedPopupText: {fileID: 765623208}
 --- !u!61 &1367036918
 BoxCollider2D:
   m_ObjectHideFlags: 0
