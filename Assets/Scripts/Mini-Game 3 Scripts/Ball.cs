@@ -8,6 +8,7 @@ public class Ball : MonoBehaviour
     public float startingSpeed;
 
     [SerializeField] private PongGameManager gameManager;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
