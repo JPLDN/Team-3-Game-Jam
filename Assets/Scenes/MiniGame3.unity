@@ -674,7 +674,7 @@ MonoBehaviour:
   playerScoreText: {fileID: 1950748419}
   aiScore: {fileID: 2001723991}
   ball: {fileID: 687629418}
-  winScore: 3
+  winScore: 5
 --- !u!1 &752872886
 GameObject:
   m_ObjectHideFlags: 0
