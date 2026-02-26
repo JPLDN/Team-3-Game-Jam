@@ -39,6 +39,8 @@ public class GameController : MonoBehaviour
 
         if (matchedPairs >= totalPairs)
         {
+            GameStateManager.Instance.SetFlag(GameFlags.IsMinigame2Complete, true);
+
             SceneManager.LoadScene(SceneName);
         }
     }
