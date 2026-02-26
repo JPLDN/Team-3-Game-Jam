@@ -70,11 +70,12 @@ public class NPC : MonoBehaviour, IInteractable
     {
         isTyping = true;
         dialogueText.SetText("");
+        SoundEffectManager.PlayVoice(dialogueData.voiceSound, dialogueData.voiceVolume);
 
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex])
         {
             dialogueText.text += letter;
-            SoundEffectManager.PlayVoice(dialogueData.voiceSound, dialogueData.voiceVolume);
+            //SoundEffectManager.PlayVoice(dialogueData.voiceSound, dialogueData.voiceVolume);
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
 
