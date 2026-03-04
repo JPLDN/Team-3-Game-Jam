@@ -75,6 +75,11 @@ public sealed class GameStateManager : MonoBehaviour
         }
     }
 
+    public void ResetFlags()
+    {
+        gameFlags.Clear();
+    }
+
     public bool CanPlayMinigame(Minigames minigame)
     {
         var allFlags = Enum.GetValues(typeof(GameFlags))
